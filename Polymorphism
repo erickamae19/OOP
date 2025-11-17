@@ -1,0 +1,70 @@
+class Vehicle {
+    String brand;
+    String model;
+    String color;
+    int year;
+    String fuel;
+
+    void info() {
+        System.out.println("This is a vehicle");
+    }
+
+    void info(String brand) {
+        System.out.println("Brand: " + brand);
+    }
+
+    void info(String brand, int year) {
+        System.out.println("Brand: " + brand + ", Year: " + year +
+                           ", Model: " + model + ", Color: " + color + ", Fuel: " + fuel);
+    }
+
+    void speed() {
+        System.out.println("Vehicle has an average speed.");
+    }
+}
+
+class Car extends Vehicle {
+    @Override
+    void speed() {
+        System.out.println("Car runs at 150 km/h.");
+    }
+}
+
+class Motorcycle extends Vehicle {
+    @Override
+    void speed() {
+        System.out.println("Motorcycle runs at 120 km/h.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Vehicle v;
+
+        v = new Car();
+        v.brand = "Toyota";
+        v.model = "Vios 1.5 G M/T";
+        v.color = "Green";
+        v.year = 2020;
+        v.fuel = "Gasoline";
+
+        v.info();
+        v.info(v.brand);
+        v.info(v.brand, v.year);
+        v.speed();
+        System.out.println();
+
+        v = new Motorcycle();
+        v.brand = "Honda";
+        v.model = "CBR 500R";
+        v.color = "Purple Silk Metallic";
+        v.year = 2024;
+        v.fuel = "Regular unleaded gasoline";
+
+        v.info();
+        v.info(v.brand);
+        v.info(v.brand, v.year);
+        v.speed();
+    }
+}
