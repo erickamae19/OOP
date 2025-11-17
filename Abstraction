@@ -1,0 +1,44 @@
+abstract class Car {
+    String brand = "Toyota";
+
+    abstract void startEngine();
+    abstract void stopEngine();
+
+    void showBrand() {
+        System.out.println("Car Brand: " + brand);
+    }
+
+    void honk() {
+        System.out.println("The car honked that makes a sound like Beep! Beep!");
+    }
+}
+
+class ToyotaVios extends Car {
+
+    @Override
+    void startEngine() {
+        System.out.println("Toyota Vios engine started using push button.");
+    }
+
+    @Override
+    void stopEngine() {
+        System.out.println("Toyota Vios engine stopped using brake.");
+    }
+
+    void showModel() {
+        System.out.println("Model: Toyota Vios 2024");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new ToyotaVios();
+
+        myCar.showBrand();
+        myCar.startEngine();
+        myCar.honk();
+        myCar.stopEngine();
+
+        ((ToyotaVios) myCar).showModel();
+    }
+}
