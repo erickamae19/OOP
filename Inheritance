@@ -8,9 +8,9 @@ class Vehicle {
 
 class Car extends Vehicle {
     String model;
-    String color;   // Added color field
-    int year;       // Added year field
-    String fuel;    // Added fuel field
+    String color;   
+    int year;      
+    String fuel;   
 
     void displayInfo() {
         System.out.println("Brand: " + brand);
